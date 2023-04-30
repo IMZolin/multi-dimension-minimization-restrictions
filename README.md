@@ -1,13 +1,13 @@
-## Solving one-dimensional minimization problems
-* [Description](#description)
-* [Get started](#get-started)
-* [Project structure](#project-structure)
-* [Scheme of Simplex method](#scheme-of-simplex-method)
-* [Results](#results)
+## Solving multi-dimensional minimization problems with restrictions
+- [Solving multi-dimensional minimization problems with restrictions](#solving-multi-dimensional-minimization-problems-with-restrictions)
+  - [Description](#description)
+  - [Get started](#get-started)
+  - [Project structure](#project-structure)
+  - [Results](#results)
 
 
 ### Description
-    f(x) = (10 sqrt(3)(x-1)^2)/(x^2 + 9)
+    f(x) = 4x_1+x_2+4*sqrt(1+3x_1^2+x_2^2)
      1. Найти minf(x) на заданном отрезке с точностью [0.1, 0.01, 0.001] с помощью трех методов: метода равномерного поиска, метода пробных точек  и метода золотого сечения 
      2. Сравнить методы. В качестве критерия использовать число обращений к вычислению функции
      3. Сравнить методы с теоретическими оценками
