@@ -7,21 +7,48 @@
 
 
 ### Description
-    f(x) = 4x_1+x_2+4*sqrt(1+3x_1^2+x_2^2)
-     1. Найти minf(x) на заданном отрезке с точностью [0.1, 0.01, 0.001] с помощью трех методов: метода равномерного поиска, метода пробных точек  и метода золотого сечения 
-     2. Сравнить методы. В качестве критерия использовать число обращений к вычислению функции
-     3. Сравнить методы с теоретическими оценками
+The problem of three-dimensional minimization is given
+
+$\varphi_0(x)=x_0 + x_1 + 0.5x_2 + 3\sqrt{1 + 3x_0^2 + x_1^2 + x_2^2}$
+
+It is necessary to fulfill three nonlinear conditions - inequalities and one linear condition - equality. Two blocks of conditions are given: in the first block, the solution of the problem is inside the permissible area; in the second block, on its border. 
+
+Block 1:
+$
+\left\{
+\begin{array}{ll}
+x_0^2 + x_1^2 - 1 \leq 0\\
+x_0^2 + x_2^2 - 1 \leq 0\\
+x_1^2 + x_2^2 - 1 \leq 0\\
+x_1 - \frac{0.35426}{0.121334} x_0 = 0\\
+\end{array}
+\right.
+$
+
+Block 2:
+$
+\left\{
+\begin{array}{ll}
+(x_0 - 1)^2 + (x_1 - 1)^2 - 1 \leq 0\\
+(x_0 - 1)^2 + (x_2 - 1)^2 - 1 \leq 0\\
+x_1^2 + x_2^2 - 1 \leq 0\\
+x_1 - \frac{0.35426}{0.121334} x_0 = 0\\
+\end{array}
+\right.
+$
+
+It is necessary to solve the problem of conditional minimization by the method of all possible directions of Zoitendijk
 
 ### Get started
 ```bash
-git clone https://github.com/IMZolin/one-dimension-minimization <your project name>
+git clone https://github.com/IMZolin/multi-dimension-minimization-restrictions <your project name>
 cd <your project name>
 pip install -r requirements.txt
 ```
 
 ### Project structure
 ```bash
-├───graphics            # images:graphics+scheme of simplex
+├───graphics            
 ├───report
 │   └───lab3_opt_methods.pdf 
 ├───src                 # code
@@ -36,11 +63,12 @@ pip install -r requirements.txt
 ```
 
 ### Results
-1. Golden Ratio Method
-<img src="images/2-gold.png" alt="golden ratio method">
-2. Trial Point Method
-<img src="images/2-tpm.png" alt="trial point method">
-3. Uniform Search Method
-<img src="images/2-us.png" alt="uniform search method">
-4. Comparison of methods
-<img src="images/2-compare.png" alt="comparison of methods">
+
+1. Solution on the border
+<img src="images/b1.png" alt="golden ratio method">
+2. Solution inside the area
+<img src="images/b2.png" alt="trial point method">
+3. Graphics of solution on the border
+<img src="images/g1.png" alt="uniform search method">
+4. Graphics of solution inside the area
+<img src="images/g2.png" alt="comparison of methods">
